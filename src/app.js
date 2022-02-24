@@ -44,15 +44,17 @@ document.addEventListener('init', async function (event) {
 
     var pokeName = page.data.url;
     var pokeUrl;
-
+    var pokeID
     for (let i = 0; i < 100; i++) {
       if (pokeName === data.results[i].name) {
         pokeUrl = data.results[i].url;  //get url from pokemonname
+        pokeID = i+1;
         break;   //may be we can reduce some time complexity by using break statement
       }
     }
 
-    document.querySelector('#pID').innerHTML = pokeName
+     document.querySelector('#pName').innerHTML = pokeName
+     document.querySelector('#pID').innerHTML = pokeID
 
 
     displayData(pokeUrl);
